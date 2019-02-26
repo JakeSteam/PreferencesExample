@@ -33,18 +33,18 @@
 
     <!-- Int -->
     <string name="pref_int1">int1</string>
-    <int name="pref_int1_step">1</int>
-    <int name="pref_int1_min">0</int>
-    <int name="pref_int1_max">10</int>
-    <int name="pref_int1_default">10</int>
+    <integer name="pref_int1_step">1</integer>
+    <integer name="pref_int1_min">0</integer>
+    <integer name="pref_int1_max">10</integer>
+    <integer name="pref_int1_default">10</integer>
     <string name="int1_title">Int 1</string>
     <string name="int1_desc">The first integer</string>
 
     <string name="pref_int2">int2</string>
-    <int name="pref_int2_step">1</int>
-    <int name="pref_int2_min">0</int>
-    <int name="pref_int2_max">10</int>
-    <int name="pref_int2_default">2</int>
+    <integer name="pref_int2_step">1</integer>
+    <integer name="pref_int2_min">0</integer>
+    <integer name="pref_int2_max">10</integer>
+    <integer name="pref_int2_default">2</integer>
     <string name="int2_title">Int 2</string>
     <string name="int2_desc">The second integer</string>
 </resources>

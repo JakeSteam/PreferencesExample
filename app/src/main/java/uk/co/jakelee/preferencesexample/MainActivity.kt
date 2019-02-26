@@ -55,10 +55,10 @@ class MainActivity : PreferenceFragmentCompat(), SharedPreferences.OnSharedPrefe
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String) {
-        val pref = findPreference(key)
-        when {
-            key == getString(R.string.pref_custom_key) && pref is EditTextPreference -> {
-                Toast.makeText(activity!!, "Set a string", Toast.LENGTH_SHORT).show()
+        when (key) {
+            getString(R.string.pref_string1) -> {
+                val pref = findPreference(key) as EditTextPreference
+                Toast.makeText(activity!!, "String changed to ${pref.text}", Toast.LENGTH_SHORT).show()
             }
         }
     }
