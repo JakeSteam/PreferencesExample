@@ -1,22 +1,15 @@
 package uk.co.jakelee.preferencesexample
 
-import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
-import android.net.Uri
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.preference.EditTextPreference
 import android.support.v7.preference.Preference
 import android.support.v7.preference.PreferenceFragmentCompat
 import android.support.v7.preference.SeekBarPreference
-import android.text.format.Formatter
 import android.view.*
-import android.widget.TextView
 import android.widget.Toast
-import java.text.SimpleDateFormat
-import java.util.*
 
 class MainActivity : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -32,22 +25,23 @@ class MainActivity : PreferenceFragmentCompat(), SharedPreferences.OnSharedPrefe
     }
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        (activity as AppCompatActivity).supportActionBar!!.title = getString(R.string.settings_title)
         addPreferencesFromResource(R.xml.preferences_ui)
-        findPreference(getString(R.string.pref_view_status)).onPreferenceClickListener = viewStatusListener
+        findPreference(getString(R.string.pref_show_values)).onPreferenceClickListener = showValuesListener
         setupSeekbars()
     }
 
     private fun setupSeekbars() {
-        val seekbar = findPreference(getString(id)) as SeekBarPreference
-        seekbar.seekBarIncrement = resources.getInteger(step)
-        seekbar.min = resources.getInteger(min)
-        seekbar.max = resources.getInteger(max)
+        (findPreference(getString(R.string.pref_int1)) as SeekBarPreference).apply { 
+            seekBarIncrement = resources.getInteger(R.integer.pref_int1_step)
+            min = resources.getInteger(R.integer.pref_int1_min)
+            max = resources.getInteger(R.integer.pref_int1_max)
+        }
 
-        val seekbar2 = findPreference(getString(id)) as SeekBarPreference
-        seekbar2.seekBarIncrement = resources.getInteger(step)
-        seekbar2.min = resources.getInteger(min)
-        seekbar2.max = resources.getInteger(max)
+        (findPreference(getString(R.string.pref_int2)) as SeekBarPreference).apply {
+            seekBarIncrement = resources.getInteger(R.integer.pref_int2_step)
+            min = resources.getInteger(R.integer.pref_int2_min)
+            max = resources.getInteger(R.integer.pref_int2_max)
+        }
     }
 
     override fun onResume() {
@@ -69,7 +63,7 @@ class MainActivity : PreferenceFragmentCompat(), SharedPreferences.OnSharedPrefe
         }
     }
 
-    private val viewStatusListener = Preference.OnPreferenceClickListener { _ ->
+    private val showValuesListener = Preference.OnPreferenceClickListener { _ ->
         AlertDialog.Builder(activity!!)
             .setTitle("test")
             .setPositiveButton("ok") { _, _ -> }
