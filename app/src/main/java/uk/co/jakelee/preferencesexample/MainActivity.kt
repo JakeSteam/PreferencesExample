@@ -34,46 +34,20 @@ class MainActivity : PreferenceFragmentCompat(), SharedPreferences.OnSharedPrefe
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         (activity as AppCompatActivity).supportActionBar!!.title = getString(R.string.settings_title)
         addPreferencesFromResource(R.xml.preferences_ui)
-        setupListeners()
+        findPreference(getString(R.string.pref_view_status)).onPreferenceClickListener = viewStatusListener
         setupSeekbars()
     }
 
     private fun setupSeekbars() {
-        setupSeekbar(
-            R.string.pref_automatic_check_time,
-            R.integer.automatic_check_time_step,
-            R.integer.automatic_check_time_min,
-            R.integer.automatic_check_time_max
-        )
-        setupSeekbar(
-            R.string.pref_automatic_check_variation,
-            R.integer.automatic_check_variation_step,
-            R.integer.automatic_check_variation_min,
-            R.integer.automatic_check_variation_max
-        )
-        setupSeekbar(
-            R.string.pref_filtering_width,
-            R.integer.filtering_width_step,
-            R.integer.filtering_width_min,
-            R.integer.filtering_width_max
-        )
-        setupSeekbar(
-            R.string.pref_filtering_height,
-            R.integer.filtering_height_step,
-            R.integer.filtering_height_min,
-            R.integer.filtering_height_max
-        )
-    }
-
-    private fun setupListeners() {
-        findPreference(getString(R.string.pref_view_status)).onPreferenceClickListener = viewStatusListener
-    }
-
-    fun setupSeekbar(id: Int, step: Int, min: Int, max: Int) {
         val seekbar = findPreference(getString(id)) as SeekBarPreference
         seekbar.seekBarIncrement = resources.getInteger(step)
         seekbar.min = resources.getInteger(min)
         seekbar.max = resources.getInteger(max)
+
+        val seekbar2 = findPreference(getString(id)) as SeekBarPreference
+        seekbar2.seekBarIncrement = resources.getInteger(step)
+        seekbar2.min = resources.getInteger(min)
+        seekbar2.max = resources.getInteger(max)
     }
 
     override fun onResume() {
