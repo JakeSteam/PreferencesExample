@@ -1,0 +1,53 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference
+            android:key="@string/pref_test_values"
+            android:title="@string/test_values"
+            android:icon="@drawable/ic_test"
+            android:summary="@string/test_desc"/>
+    <PreferenceCategory android:title="Booleans">
+        <SwitchPreference
+                android:key="@string/pref_custom_key_enabled"
+                android:defaultValue="@bool/custom_key_enabled_default"
+                android:title="@string/custom_key_enabled_title"
+                android:icon="@drawable/ic_settings_custom_key_enable"
+                android:summary="@string/custom_key_enabled_desc"/>
+        <SwitchPreference
+                android:key="@string/pref_use_hd_images"
+                android:defaultValue="@bool/use_hd_images_default"
+                android:title="@string/use_hd_images_title"
+                android:icon="@drawable/ic_settings_hd"
+                android:summary="@string/use_hd_images_desc"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Strings">
+        <EditTextPreference
+                android:key="@string/pref_custom_key"
+                android:defaultValue="@string/custom_key_default"
+                android:icon="@drawable/ic_settings_custom_key"
+                android:title="@string/custom_key_title"
+                android:dependency="@string/pref_custom_key_enabled"
+                android:summary="@string/custom_key_desc"/>
+        <EditTextPreference
+                android:key="@string/pref_custom_key"
+                android:defaultValue="@string/custom_key_default"
+                android:icon="@drawable/ic_settings_custom_key"
+                android:title="@string/custom_key_title"
+                android:dependency="@string/pref_custom_key_enabled"
+                android:summary="@string/custom_key_desc"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Integers">
+        <SeekBarPreference
+                android:key="@string/pref_filtering_width"
+                android:defaultValue="@integer/filtering_width_default"
+                android:title="@string/filtering_width_title"
+                android:icon="@drawable/ic_settings_width"
+                android:dependency="@string/pref_filtering_enabled"
+                android:summary="@string/filtering_width_desc"/>
+        <SeekBarPreference
+                android:key="@string/pref_filtering_height"
+                android:defaultValue="@integer/filtering_height_default"
+                android:title="@string/filtering_height_title"
+                android:icon="@drawable/ic_settings_height"
+                android:dependency="@string/pref_filtering_enabled"
+                android:summary="@string/filtering_height_desc"/>
+    </PreferenceCategory>
+</PreferenceScreen>
