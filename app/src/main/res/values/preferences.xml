@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Misc -->
+    <string name="pref_show_values">show_values</string>
+    <string name="show_values_title">Show all values</string>
+    <string name="show_values_desc">Dialog with all values</string>
+
+    <string name="open_repo_title">Open repository</string>
+    <string name="open_repo_desc">Open this app\'s source code</string>
+    <string name="repo_url">https://github.com/JakeSteam/PreferencesExample</string>
+
+    <!-- Booleans -->
+    <string name="pref_boolean1">boolean1</string>
+    <bool name="pref_boolean1_default">false</bool>
+    <string name="boolean1_title">First boolean</string>
+    <string name="boolean1_desc">This toggles the first boolean</string>
+
+    <string name="pref_boolean2">boolean2</string>
+    <bool name="pref_boolean2_default">false</bool>
+    <string name="boolean2_title">Second boolean</string>
+    <string name="boolean2_desc">This toggles the second boolean</string>
+
+    <!-- Strings -->
+    <string name="pref_string1">string1</string>
+    <string name="pref_string1_default">FirstDefault</string>
+    <string name="string1_title">String 1</string>
+    <string name="string1_desc">Set the first string</string>
+
+    <string name="pref_string2">string2</string>
+    <string name="pref_string2_default">SecondDefault</string>
+    <string name="string2_title">String 2</string>
+    <string name="string2_desc">Set the second string</string>
+
+    <!-- Int -->
+    <string name="pref_int1">int1</string>
+    <int name="pref_int1_default">10</int>
+    <string name="int1_title">Int 1</string>
+    <string name="int1_desc">The first integer</string>
+
+    <string name="pref_int2">int2</string>
+    <int name="pref_int2_default">20</int>
+    <string name="int2_title">Int 2</string>
+    <string name="int2_desc">The second integer</string>
+</resources>

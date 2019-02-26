@@ -28,16 +28,6 @@ class PreferenceHelper(val context: Context) {
     fun setStringPref(pref: StringPref, value: String) =
         prefs.edit().putString(context.getString(pref.prefId), value).commit()
 
-    enum class LongPref(val prefId: Int, val defaultId: Int) {
-        setting1(R.string.pref_long1, R.integer.pref_long1_default),
-        setting2(R.string.pref_long2, R.integer.pref_long2_default)
-    }
-
-    fun getLongPref(pref: LongPref) =
-        prefs.getLong(context.getString(pref.prefId), context.resources.getInteger(pref.defaultId).toLong())
-
-    fun setLongPref(pref: LongPref, value: Long) = prefs.edit().putLong(context.getString(pref.prefId), value).commit()
-
     enum class IntPref(val prefId: Int, val defaultId: Int) {
         setting1(R.string.pref_int1, R.integer.pref_int1_default),
         setting2(R.string.pref_int2, R.integer.pref_int2_default)
