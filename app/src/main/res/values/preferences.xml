@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Misc -->
-    <string name="pref_show_values">show_values</string>
-    <string name="show_values_title">Show all values</string>
-    <string name="show_values_desc">Dialog with all values</string>
-
-    <string name="open_repo_title">Open repository</string>
-    <string name="open_repo_desc">Open this app\'s source code</string>
-    <string name="repo_url">https://github.com/JakeSteam/PreferencesExample</string>
-
     <!-- Booleans -->
     <string name="pref_boolean1">boolean1</string>
     <bool name="pref_boolean1_default">false</bool>
